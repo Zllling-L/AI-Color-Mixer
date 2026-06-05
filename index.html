@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<body>
+    <h2>开发者：郑泽琳  学号：423830229</h2>
+    <h3>AI智能配色生成器（可调配色系数）</h3>
+    <div>
+        <button onclick="createColor()">一键AI生成配色</button>
+    </div>
+    <div id="colorBox" style="width:500px;height:200px;margin-top:20px;border:1px solid #333;"></div>
+    <p id="tip"></p>
+
+<script>
+// 配色权重系数，修改数值=参数优化
+let colorWeight = 120;
+
+function createColor(){
+    let r = Math.min(255,Math.floor(Math.random()*colorWeight + 80));
+    let g = Math.min(255,Math.floor(Math.random()*colorWeight + 80));
+    let b = Math.min(255,Math.floor(Math.random()*colorWeight + 80));
+    document.getElementById("colorBox").style.background = `rgb(${r},${g},${b})`;
+    document.getElementById("tip").innerText = `当前配色参数colorWeight=${colorWeight}，RGB：${r},${g},${b}`;
+}
+</script>
+</body>
+</html>
